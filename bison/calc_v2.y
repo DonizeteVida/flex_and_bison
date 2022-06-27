@@ -1,5 +1,5 @@
 %{
-#include <stdio.h>
+    #include <stdio.h>
 %}
 
 %token NUMBER
@@ -23,11 +23,13 @@ term: NUMBER
 ;
 %%
 
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
- yyparse();
+    yyparse();
+    return 1;
 }
-yyerror(char *s)
+int yyerror(char *s)
 {
- fprintf(stderr, "error: %s\n", s);
+    fprintf(stderr, "error: %s\n", s);
+    return 1;
 }
