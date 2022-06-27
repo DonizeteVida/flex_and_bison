@@ -3,7 +3,11 @@
 #how to use:
 #./compile.sh wc
 
-name=$1
+len=${#1}
+input=$1
+name=${input:0:len-2} #input, from 0 to len -2, to remove .l or .y extension
+
+echo $name
 
 flex -o $name.c $name.l
 

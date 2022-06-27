@@ -1,3 +1,5 @@
+%option noyywrap
+
 %{
     int chars = 0;
     int words = 0;
@@ -19,8 +21,6 @@
 }
 
 %%
-
-int yywrap() { return 1; }
 
 int main() {
     yylex();

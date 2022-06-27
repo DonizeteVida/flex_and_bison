@@ -1,3 +1,5 @@
+%option noyywrap
+
 %%
 "+" {
     printf("PLUS\n");
@@ -27,10 +29,6 @@
     printf("UNKNOWN CHAR: %s\n", yytext);
 }
 %%
-
-int yywrap() {
-    return 1;
-}
 
 int main() {
     yylex();
