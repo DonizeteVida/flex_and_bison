@@ -1,3 +1,5 @@
+%option noyywrap
+
 %{
 enum yytokenval {
     NUMBER = 258,
@@ -36,10 +38,6 @@ int yylval;
     printf("Unknown char: %s", yytext);
 }
 %%
-
-int yywrap() {
-    return 1;
-}
 
 int main() {
     int token;
